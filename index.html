@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+<!-- !Copyright -->
+<!--
+	Project: org.rettapp.med-rhn-dev
+	Description: 
+	Author: Jonathan Starck 
+	Licence: GNU GENERAL PUBLIC LICENSE Version 2, June 1991 & European Union Public Licence
+	Source: https://github.com/RettApp/org.rettapp.med-rhn-dev
+-->
+<head>
+	<script src="cordova.js"></script>	<title>RettApp Med RHN</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="core/jquery/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="core/stylesheet/custom.css">
+	<script src="core/jquery/2.1.4.min.js"></script>
+	<script src="core/jquery/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="core/javascript/app.js"></script><script type="text/javascript" src="js/plugins/LaunchMyApp.js"></script><script type="text/javascript" src="js/plugins/wkwebview.js"></script>	<script src="core/javascript/custom.js"></script>
+</head><body><div data-role="page" id="main-1-disclaimer"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1></h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content"><div class="rettapp-banner"><img src="core/image/rettapp_973x235_banner.png" alt="RettApp Logo" /></div><p>Die Inhalte dieser App werden mit größtmöglicher Sorgfalt erstellt. Der Anbieter übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Inhalte. Die Nutzung der Inhalte der Website erfolgt auf eigene Gefahr des Nutzers. Dies gilt explizit‎ für Dosierungen von Medikamente. Die App stellt im Bereich Medikamente lediglich eine Hilfestellung da. Es gelten die allgemeine Gesetze sowie die Richtlinien des regional zuständigen Ärztlichen Leiter Rettungsdienst.</p><p>Diese App ist von Rettungsdienstler für Rettungsdienstler - uns ist wichtig, dass alle Informationen kostenlos und frei zugänglich für Sie zur Verfügung gestellt werden! Wir sprechen uns klar gegen z.B. kostenpflichtige SOP-Apps aus! Daher steht die RettApp unter der "GNU General Public License (GPL) v. 2" und der "European Union Public Licence (EUPL)".</p><a href="#main-2-index" class="ui-btn ui-icon-check ui-btn-icon-left ui-corner-all startuplink">Gelesen und Einverstanden</a></div></div><div data-role="page" id="main-2-index"><div data-role="header" data-position="fixed"><span class="ui-title"></span><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+		<div class="rettapp-banner">
+			<img src="core/image/rettapp_973x235_banner.png" alt="Logo" />
+			
+		</div>
+		<form class="ui-filterable">
+			<input id="inset-autocomplete-input" data-type="search" placeholder="Schnellsuche Medikament...">
+		</form>
+		<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-input="#inset-autocomplete-input" class="med" data-inset="true">
+			<li divider="Medikamente" data-filtertext="Acesal, Alka-Seltzer, Aspirin, Godamed, Herz-ASS, Miniasal, Togal-ASS, ASS-ratiopharm, Eudorlin, Acetylsalicylsäure, nichtsteroidales Antirheumatikum, Antipyretikum, Thrombozytenaggregationshemmer, ACS, akutes Koronarsyndrom, Myokardinfarkt, Herzinfarkt"><a href="#med-8-acetylsalicylsaeure">Acetylsalicylsäure</a></li><li divider="Medikamente" data-filtertext="Amiodaron, Amiodares, Amiogamma, Cordarex, Cordarone, Cornaron, Escordaron, Sedacoron, Klasse-III Antiarrhythmikum"><a href="#med-21-amiodaron">Amiodaron</a></li><li divider="Medikamente" data-filtertext="Dimenhydrinat, Antemin, Emedyl, Reisefit Hennig, Reisegold, Reisetabletten, Superpep, Travel-Gum, Trawell, Vertigo-Vomex, Vertirosan, Vomacur, Vomex A, Antihistaminikum, Antiemetikum"><a href="#med-18-dimenhydrinat">Dimenhydrinat</a></li><li divider="Medikamente" data-filtertext="Dimetinden, Fenistil, Feniallerg, Antihistaminika, Anaphylaxie"><a href="#med-10-dimetinden">Dimetinden</a></li><li divider="Medikamente" data-filtertext="Epinephrin, Suprarenin, Adrenalin, Neurotransmitter, Hormon, Anaphylaxie, Reanimation, Atemwegsstenose"><a href="#med-13-epinephrin">Epinephrin</a></li><li divider="Medikamente" data-filtertext="Diurapid, Furanthril, Furobeta, Furodrix, Furogamma, Furon, Furorese, Furosal, Fursol, Fusid, Jufurix, Lasix, Oedemex, Furosemid, Schleifendiuretikum, Lungenödem"><a href="#med-9-furosemid">Furosemid</a></li><li divider="Medikamente" data-filtertext="Glucose, Hypoglykämie"><a href="#med-17-glucose">Glucose</a></li><li divider="Medikamente" data-filtertext="Heparin, Antikoagulanzien, Calciparine, Gelparin, Lioton, Liquemin, Lovenox, Lyman, Sportino, Thrombareduct, Thrombophob, Vetren, Antikoagulanzien, ACS, akutes Koronarsyndrom, Myokardinfarkt, Herzinfarkt"><a href="#med-14-heparin">Heparin</a></li><li divider="Medikamente" data-filtertext="Ipratropiumbromid, Atropair, Atrovent, IPRAXA, Itrop, Nebu-Iprasal, Rhinovent, IpraBronch, Antiarrhythmikum, Anticholinergikum"><a href="#med-15-ipratropiumbromid">Ipratropiumbromid</a></li><li divider="Medikamente" data-filtertext="Midazolam, Dormicum, Buccolam, Hypnotikum, Benzodiazepin, Sedativum"><a href="#med-12-midazolam">Midazolam</a></li><li divider="Medikamente" data-filtertext="Nitroglycerin, Glycerintrinitrat, Glyceroltrinitrat, Trisalpetersäureglycerinester, Corangin Nitrospray, Deponit, Glytrin, MinitranTM, Minitrans, Nitrangin, Nitro, Nitroderm, Nitro-Dur, Nitronal, Nitrolingual, Perlanganit, Trinitrin, Trinitrosan, Rectogesic, Vasodilatator, Lungenödem, ACS, akutes Koronarsyndrom, Myokardinfarkt, Herzinfarkt"><a href="#med-11-nitroglycerin">Nitroglycerin</a></li><li divider="Medikamente" data-filtertext="Paracetamol, Acetalgin, ben-u-ron, Captin, Contac, Contra-Schmerz, Dafalgan, Dolprone, Enelfa Dr. Henk, GRIPPEX, Mexalen, Panadol, Parapaed, Perfalgan, RubieMol, Tylenol, Nichtopioid-Analgetikum, Antipyretikum"><a href="#med-20-paracetamol">Paracetamol</a></li><li divider="Medikamente" data-filtertext="Glucocorticoide, Dehydrocortisol, Metacortandralon, Deltahydrocortison, Aprednislon, Decortin H, Dermosolon, Dontisolon, Hefasolon, Hexacorton, Infectocortikrupp, Inflanefran, Klismacort, Kuehlprednon, Linola H, Lygal Tinktur, Prednisolon, Prednisolut, Premandol, Solu-Decortin H, Solu-Dacortin, Spiricort, Ultracortenol, Decortin, Predni Tablinen, Rectodelt"><a href="#med-3-prednisolon">Prednisolo</a></li><li divider="Medikamente" data-filtertext="Salbutamol, Apsomol, Broncho-Inhalat, Bronchospray, Butovent, Cyclocaps Salbutamol, Dospir, Ecovent, Epaq, Novolizer Salbutamol, Pädiamol, Pentamol, Salamol, Salbubronch, Sultanol, Ventilastin, Ventolin, Ventoline, Volmac, β2-Sympathomimetikum, COPD, Asthma, Chronisch obstruktive Lungenerkrankung, Bronchitis"><a href="#med-16-salbutamol">Salbutamol</a></li><li divider="Medikamente" data-filtertext="Sauerstoff"><a href="#med-19-sauerstoff">Sauerstoff</a></li>
+		</ul>
+		<p>
+			<a href="#other-6-imprint" class="ui-btn ui-corner-all ui-btn-icon-right ui-icon-info ui-shadow" data-rel='dialog'>Kontakt</a>
+			<a href="#other-4-donate" class="ui-btn ui-corner-all ui-btn-icon-right ui-icon-heart ui-shadow">Buy Me a Beer</a>
+			<span class="showVersion"></span>
+		</p>
+		<p class="align-center">"GNU General Public License (GPL) v. 2" &amp; "European Union Public Licence (EUPL)"</p>
+	</div></div><div data-role="page" id="med-3-prednisolon"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Prednisolo</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wechselwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Toxizität</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Glucocorticoide, Dehydrocortisol, Metacortandralon, Deltahydrocortison, Aprednislon, Decortin H, Dermosolon, Dontisolon, Hefasolon, Hexacorton, Infectocortikrupp, Inflanefran, Klismacort, Kuehlprednon, Linola H, Lygal Tinktur, Prednisolon, Prednisolut, Premandol, Solu-Decortin H, Solu-Dacortin, Spiricort, Ultracortenol, Decortin, Predni Tablinen, Rectodelt</p>
+	</div>
+	<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</button>
+
+</div></div><div data-role="page" id="other-4-donate"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Buy Me a Beer</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content"><p>Diese App ist von Rettungsdienstler für Rettungsdienstler - uns ist wichtig, dass alle Informationen kostenlos und frei zugänglich für Sie zur Verfügung gestellt werden! Das Entwickeln/Bereitstellen ist leider nicht ohne finanziellen Aufwand möglich. Sollte Ihnen die RettApp gefallen so unterstützen Sie den Entwickler!</p><p class="align-center">
+			<a href="http://www.amazon.de/registry/wishlist/YRKA7VXAPXGA" data-rel="external" target="foo"><img src="core/icon/1392833874_Amazon.png" alt="Amazon Button" width="120" /></a>
+			<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=G62QH4JXWWUKU" data-rel="external" target="foo"><img src="core/icon/1392833865_PayPal.png" alt="PayPal Button" width="120" /></a>
+		</p>
+	</div></div><div data-role="page" id="other-5-settings"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Einstellungen</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+		<form>
+			<div class="ui-field-contain">
+				<label for="settings-startdisclaimer">Rechtliches bei Start:</label>
+				<select name="flip-1" id="settings-startdisclaimer" data-role="slider">
+					<option value="1">Off</option>
+					<option value="0">On</option>
+				</select>
+			</div>
+		</form>
+		<a id="saveSettings" class="ui-btn ui-btn-icon-left ui-icon-check ui-corner-all show-page-loading-msg" data-textonly="false" data-textvisible="true" data-msgtext="" data-inline="true">Speichern</a>
+	</div></div><div data-role="page" id="other-6-imprint"><div data-role="header"><h1>Kontakt</h1></div><div data-role="content" role="main" class="ui-content">
+		<p>Angaben gemäß §5 TMG:</p>
+		<p>Jonathan Starck<br>
+			Oberpforte 10<br>
+			55278 Dolgesheim</p>
+		<p>
+			<a href="mailto:support@rettapp.org?body=Bitte%20beachten%20Sie%2C%20dass%20alle%20Email-Anfragen%20%C3%BCber%20das%20Ticket-System%20von%20Cretection%20Web-%20%26%20Computertechnik%20l%C3%A4uft.%20Trotz%20allem%20ist%20die%20RettApp%20ein%20unabh%C3%A4ngige%20App%20ohne%20kommerzielle%20Absichten!" class="ui-btn ui-icon-mail ui-btn-icon-left">support@rettapp.org</a>
+			<a href="#other-7-copyrights" class="ui-btn ui-icon-tag ui-btn-icon-left" data-rel="dialog">Copyrights</a>
+		</p>
+	</div></div><div data-role="page" id="other-7-copyrights"><div data-role="header">
+		<h1>Copyrights</h1>
+	</div><div data-role="content" role="main" class="ui-content">
+		<ul data-role="listview" data-inset="true">
+			<li data-role="list-divider">Icons</li>
+			<li>
+				<a href="https://www.iconfinder.com/iconsets/50-payment-system" data-rel="external" target="foo">
+					<img src="core/icon/1392833874_Amazon.png" height="80" />
+					<h2>Amazon Icon</h2>
+					<p>Copyright by Artem M.</p>
+				</a>
+			</li>
+			<li>
+				<a href="https://www.iconfinder.com/iconsets/50-payment-system" data-rel="external" target="foo">
+					<img src="core/icon/1392833865_PayPal.png" height="80" />
+					<h2>PayPal Icon</h2>
+					<p>Copyright by Artem M.</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://www.everaldo.com/" data-rel="external" target="foo">
+					<img src="core/icon/1392835144_voice-support.png"/>
+					<h2>Leitstellen Icon</h2>
+					<p>Copyright by Everaldo Coelho - LGPL</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://bevelandemboss.net/" data-rel="external" target="foo">
+					<img src="core/icon/1392835739_map-icon.png"/>
+					<h2>Karten Icon</h2>
+					<p>Copyright by Bevelandemboss.net - Free for commercial use</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://e-young.deviantart.com/" data-rel="external" target="foo">
+					<img src="core/icon/1392836083_1_17.png" width="80"/>
+					<h2>Medikamente Icon</h2>
+					<p>Copyright by E-young - Free for commercial use</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://iconleak.com/" data-rel="external" target="foo">
+					<img src="core/icon/1392922996_calculator.png" width="80"/>
+					<h2>Rechner Icon</h2>
+					<p>Copyright by Iconleak - Free for commercial use</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://icons8.com/" data-rel="external" target="foo">
+					<img src="core/icon/1392926846_missed_call.png" width="80"/>
+					<h2>Anruf Icon</h2>
+					<p>Copyright by Visual Pharm - Free for commercial use</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://www.centigrade.de/" data-rel="external" target="foo">
+					<img src="core/icon/1392838565_Hospital.png" width="80"/>
+					<h2>Krankenhaus Icon</h2>
+					<p>Copyright by Centigrade - Free for commercial use</p>
+				</a>
+			</li>
+			<li data-role="list-divider">Information</li>
+			<li>
+				<a href="http://www.dgu-traumanetzwerk.de/" data-rel="external" target="foo">
+					<h2>Trauma Netzwerk</h2>
+					<p>by DGU. Qualifikationen der Krankenhäuser in Deutschland</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://www.geodatenzentrum.de" data-rel="external" target="foo">
+					<h2>Landkreis Informationen</h2>
+					<p>by BKG. Die geometrischen Daten der Landkreis</p>
+				</a>
+			</li>
+		</ul>
+	</div></div><div data-role="page" id="med-8-acetylsalicylsaeure"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Acetylsalicylsäure</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+			<div>
+				<ul>
+					<li>Schmerzzustände, besonders bei koronarer Herzkrankheit</li>
+					<li>Thromboseprophylaxe</li>
+				</ul>
+				<h4>SOP's</h4>
+				<ul>
+					<li>Akutes Koronarsyndrom</li>
+				</ul>
+			</div>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+			<ul>
+				<li>Magen-Darm-Ulcera</li>
+				<li>erhöhte Blutungsneigung</li>
+				<li>Asthma bronchiale</li>
+				<li>Gravidität (letztes Trimenom)</li>
+				<li>bekannte Allergie</li>
+				<li>Einnahme in den letzten 24 Stunden (in dieser Situation)</li>
+				<li>OP innerhalb der letzten 24 Stunden</li>
+				<li>bekannte GI Blutung (Teerstuh, Bluterbrechen, etc.)
+			</ul>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+			<ul>
+				<li>Magenbeschwerden</li>
+				<li>Blutungen</li>
+				<li>bei Überempfindlichkeit Bronchokonstriktion</li>
+				<li>Reyre-Syndrom bei Kindern</li>
+			</ul>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wechselwirkungen</h3>
+			<ul>
+				<li>Wirkungsverstärkung von gerinnungshemmende Arzneimitteln</li>
+				<li>Wirkungsverstärkung von blutzuckersenkenden Arzneimitteln</li>
+				<li>Wirkungsverminderung von Diuretika</li>
+			</ul>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+			<div>
+				<h4>Akutes Koronarsyndrom</h4>
+				<ul><li>250 mg i.v.</li></ul>
+			</div>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+			<ul>
+				<li>Prostaglandinhemmer mit analgetischer, antipyretischer und thrombozytenaggregationshemmender Wirkung</li>
+			</ul>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Acesal, Alka-Seltzer, Aspirin, Godamed, Herz-ASS, Miniasal, Togal-ASS, ASS-ratiopharm, Eudorlin, Acetylsalicylsäure, nichtsteroidales Antirheumatikum, Antipyretikum, Thrombozytenaggregationshemmer, ACS, akutes Koronarsyndrom, Myokardinfarkt, Herzinfarkt</p>
+	</div>
+	<a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</a>
+
+</div></div><div data-role="page" id="med-9-furosemid"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Furosemid</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wechselwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Toxizität</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Diurapid, Furanthril, Furobeta, Furodrix, Furogamma, Furon, Furorese, Furosal, Fursol, Fusid, Jufurix, Lasix, Oedemex, Furosemid, Schleifendiuretikum, Lungenödem</p>
+	</div>
+	<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</button>
+
+</div></div><div data-role="page" id="med-10-dimetinden"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Dimetinden</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wechselwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Toxizität</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Dimetinden, Fenistil, Feniallerg, Antihistaminika, Anaphylaxie</p>
+	</div>
+	<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</button>
+
+</div></div><div data-role="page" id="med-11-nitroglycerin"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Nitroglycerin</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wechselwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Toxizität</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Nitroglycerin, Glycerintrinitrat, Glyceroltrinitrat, Trisalpetersäureglycerinester, Corangin Nitrospray, Deponit, Glytrin, MinitranTM, Minitrans, Nitrangin, Nitro, Nitroderm, Nitro-Dur, Nitronal, Nitrolingual, Perlanganit, Trinitrin, Trinitrosan, Rectogesic, Vasodilatator, Lungenödem, ACS, akutes Koronarsyndrom, Myokardinfarkt, Herzinfarkt</p>
+	</div>
+	<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</button>
+
+</div></div><div data-role="page" id="med-12-midazolam"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Midazolam</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wechselwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Toxizität</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Midazolam, Dormicum, Buccolam, Hypnotikum, Benzodiazepin, Sedativum</p>
+	</div>
+	<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</button>
+
+</div></div><div data-role="page" id="med-13-epinephrin"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Epinephrin</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+			<div>
+				<ul>
+					<li>Reanimation</li>
+					<li>Schock (kardiogen, septisch, anaphylaktisch)</li>
+					<li>schweres Asthma bronchiale</li>
+					<li>Status asthmaticus</li>
+				</ul>
+				<h4>SOP's:</h4>
+				<ul>
+					<li>Reanimation</li>
+					<li>Anaphylaxie</li>
+					<li>Atemwegsstenose</li>
+				</ul>
+			</div>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+			<div>
+				<ul>
+					<li>im lebensbedrohlichen Notfall: keine</li>
+					<li>Hypertonie</li>
+					<li>Koronare Herzkrankheit</li>
+					<li>Tachyarhythmien</li>
+					<li>Hyperthyreose</li>
+					<li>Phäochromozytom</li>
+					<li>Glaukom</li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+			<div>
+				<ul>
+					<li>Tachykardie</li>
+					<li>Gefahr von Extrasystolen</li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+			<div>
+				<h4>Reanimation (ERC Richtlinien 2015)</h4>
+				<ul>
+					<li><b>Erwachsene:</b><br>1 mg i.v. alle 3-5 Minuten (= nach jedem 2. Zyklus)</li>
+					<li><b>Kinder:</b><br>0,01 mg/kg i.v. alle 3-5 Minuten (= nach jedem 2. Zyklus)</li>
+				</ul>
+				<h4>Anaphylaxie</h4>
+				<ul>
+					<li><b>Erwachsene:</b>
+						<ul>
+							<li>5 mg vernebeln (Vorwiegende Atemsymptomatik bei Stadium 1-3)</li>
+							<li>0,01 mg i.v. titrieren (Vorwiegende Kreislaufsymptomatik ab Stadium 3)</li>
+						</ul>
+					</li>
+					<li><b>Kinder bis 10 kgKG</b>
+						<ul>
+							<li>0,5 mg/kgKG vernebeln (Vorwiegende Atemsymptomatik bei Stadium 1-3)</li>
+							<li>0,5 mg/kgKG vernebeln (Vorwiegende Kreislaufsymptomatik ab Stadium 3)</li>
+						</ul>
+					</li>
+				</ul>
+				<h4>Krupp &amp; Epiglottitis</h4>
+				<ul>
+					<li><b>Kinder bis 10kg KG:</b><br>0,5 mg/kgKG vernebeln</li>
+					<li><b>Kinder ab 10kg KG:</b><br>5 mg vernebeln</li>
+			</div>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+			<div>
+				<ul>
+					<li>Engstellung der peripheren Gefäße (α-Rezeptoren)</li>
+					<li>Erhöhung der Kontraktionskraft (positiv inotrop), der Herzfrequenz (positiv chronotrop) und der Erregbarkeit der Herzmuskelzellen (positiv bathmotrop) (β1-Rezeptoren)</li>
+					<li>Erweiterung der Bronchialgefäße (β2-Rezeptoren)</li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkstoffklasse</h3>
+			<div>
+				<ul>
+					<li>Neurotransmitter</li>
+					<li>Hormon</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Epinephrin, Suprarenin, Adrenalin, Neurotransmitter, Hormon, Anaphylaxie, Reanimation, Atemwegsstenose</p>
+	</div>
+	<a href="" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</a>
+</div></div><div data-role="page" id="med-14-heparin"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Heparin</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wechselwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Toxizität</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Heparin, Antikoagulanzien, Calciparine, Gelparin, Lioton, Liquemin, Lovenox, Lyman, Sportino, Thrombareduct, Thrombophob, Vetren, Antikoagulanzien, ACS, akutes Koronarsyndrom, Myokardinfarkt, Herzinfarkt</p>
+	</div>
+	<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</button>
+
+</div></div><div data-role="page" id="med-15-ipratropiumbromid"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Ipratropiumbromid</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wechselwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Toxizität</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Ipratropiumbromid, Atropair, Atrovent, IPRAXA, Itrop, Nebu-Iprasal, Rhinovent, IpraBronch, Antiarrhythmikum, Anticholinergikum</p>
+	</div>
+	<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</button>
+
+</div></div><div data-role="page" id="med-16-salbutamol"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Salbutamol</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wechselwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Toxizität</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Salbutamol, Apsomol, Broncho-Inhalat, Bronchospray, Butovent, Cyclocaps Salbutamol, Dospir, Ecovent, Epaq, Novolizer Salbutamol, Pädiamol, Pentamol, Salamol, Salbubronch, Sultanol, Ventilastin, Ventolin, Ventoline, Volmac, β2-Sympathomimetikum, COPD, Asthma, Chronisch obstruktive Lungenerkrankung, Bronchitis</p>
+	</div>
+	<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</button>
+
+</div></div><div data-role="page" id="med-17-glucose"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Glucose</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wechselwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Toxizität</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Glucose, Hypoglykämie</p>
+	</div>
+	<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</button>
+
+</div></div><div data-role="page" id="med-18-dimenhydrinat"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Dimenhydrinat</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wechselwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Toxizität</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Dimenhydrinat, Antemin, Emedyl, Reisefit Hennig, Reisegold, Reisetabletten, Superpep, Travel-Gum, Trawell, Vertigo-Vomex, Vertirosan, Vomacur, Vomex A, Antihistaminikum, Antiemetikum</p>
+	</div>
+	<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</button>
+
+</div></div><div data-role="page" id="med-19-sauerstoff"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Sauerstoff</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wechselwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Toxizität</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Sauerstoff</p>
+	</div>
+	<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</button>
+
+</div></div><div data-role="page" id="med-20-paracetamol"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Paracetamol</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wechselwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Toxizität</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Paracetamol, Acetalgin, ben-u-ron, Captin, Contac, Contra-Schmerz, Dafalgan, Dolprone, Enelfa Dr. Henk, GRIPPEX, Mexalen, Panadol, Parapaed, Perfalgan, RubieMol, Tylenol, Nichtopioid-Analgetikum, Antipyretikum</p>
+	</div>
+	<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</button>
+
+</div></div><div data-role="page" id="med-21-amiodaron"><div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>Amiodaron</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div><div data-role="content" role="main" class="ui-content">
+	<div data-role="collapsibleset" data-inset="true">
+		<div data-role="collapsible">
+			<h3>Indikation</h3>
+		</div>
+    		<div data-role="collapsible">
+       			 <h3>Kontraindikation</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Nebenwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wechselwirkungen</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Toxizität</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Dosierung</h3>
+		</div>
+		<div data-role="collapsible">
+			<h3>Wirkungsweise</h3>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h4>Stichwörter</h4>
+		<p>Amiodaron, Amiodares, Amiogamma, Cordarex, Cordarone, Cornaron, Escordaron, Sedacoron, Klasse-III Antiarrhythmikum</p>
+	</div>
+	<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert bug-found">Fehler gefunden?</button>
+
+</div></div></body></html>
