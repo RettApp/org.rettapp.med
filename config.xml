@@ -53,17 +53,13 @@
 	<gap:splash src="core/image/splash/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
 	<gap:splash src="core/image/splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
 	<gap:splash src="core/image/splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
-	<!--
-	<gap:plugin name="com.telerik.plugins.wkwebview" source="pgb" version="0.2.5" />
-	<gap:plugin name="nl.x-services.plugins.launchmyapp" source="pgb" version="3.2.0">
-		<param name="URL_SCHEME" value="orgrettappaid" />
-	</gap:plugin>
-	<gap:plugin name="org.apache.cordova.inappbrowser" source="pgb" version="0.5.2" />
-	<gap:plugin name="org.apache.cordova.statusbar" source="pgb" version="0.1.4" />
 	
+	<plugin name="cordova-plugin-inappbrowser" spec="1.0.1" source="pgb" />
+	
+	<gap:plugin name="com.phonegap.plugin.statusbar" />
 	<preference name="StatusBarOverlaysWebView" value="false"/>
-	<preference name="StatusBarBackgroundColor" value="#000000"/>
-	<preference name="StatusBarStyle" value="lightcontent" />
-	-->
+	<preference name="StatusBarBackgroundColor" value="#E9E9E9"/>
+	<preference name="StatusBarStyle" value="blacktranslucent" />
+	
 	<access origin="*" subdomains="true" />
 </widget>
